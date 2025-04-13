@@ -20,22 +20,31 @@ This project demonstrates how to load and display an external 3D model (GLTF/GLB
 
 ## 📦 Installation
 
-Make sure you have Angular CLI installed:
+- Make sure you have Angular CLI installed:
 
 ```bash
 npm install -g @angular/cli
 ```
 
 ## Then install the dependencies:
+```bash
 npm install three
+```
+```bash
 npm install angular-three
+```
+```bash
 npm install angular-three-soba
+```
+```bash
 npm install three-stdlib
+```
 
 
 ## Component Setup (Experience)
-This component is responsible for rendering the 3D scene with lighting, camera, and model loading:
+- This component is responsible for rendering the 3D scene with lighting, camera, and model loading:
 
+```bash
 import { CUSTOM_ELEMENTS_SCHEMA, Component, viewChild, ElementRef, ChangeDetectionStrategy, computed } from '@angular/core';
 import { injectStore, extend, injectBeforeRender, injectLoader, NgtArgs } from 'angular-three';
 import * as THREE from 'three';
@@ -51,17 +60,14 @@ extend({ OrbitControls });
     <ngt-ambient-light [intensity]="10" />
     <ngt-spot-light [position]="10" [intensity]="0.5 * Math.PI" [angle]="0.15" [penumbra]="1" [decay]="0" />
     <ngt-point-light [position]="-10" [intensity]="0.5 * Math.PI" [decay]="0" />
-     
     for .GLB extension
     <!-- @if (gltfResult(); as gltf) {
       <ngt-primitive *args="[gltf.scene]" />
     } -->
-
     <ngt-mesh #mesh>
       <ngt-primitive *args="[model()]" />
     </ngt-mesh>
-    <ngt-orbit-controls #orbirControls *args="[camera(), glDomElement()]" [enableZoom]="false" [autoRotate]="true" [autoRotateSpeed]="5" />
-  `,
+    <ngt-orbit-controls #orbirControls *args="[camera(), glDomElement()]" [enableZoom]="false" [autoRotate]="true" [autoRotateSpeed]="5" />`,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [NgtArgs],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -96,16 +102,19 @@ export class Experience {
   protected glDomElement = this.store.select('gl', 'domElement');
 }
 
+```
 
 ## Error handing 
 
-1. Camera Control  Error 'angular-three-soba/loaders'; not found 
-   use 
+- Camera Control  Error 'angular-three-soba/loaders'; not found 
+  
+```bash
    npm install camera-controls
-
-2. maath Error 'angular-three-soba/loaders'; not found   
-   use 
+```
+- maath Error 'angular-three-soba/loaders'; not found   
+   
+```bash
    npm install maath
-
+```
 ## Final Template will look like this 
 ![alt text](<Screenshot 2025-04-13 193242.png>)   
