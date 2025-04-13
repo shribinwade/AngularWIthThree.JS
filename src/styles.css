@@ -1,0 +1,22 @@
+@import "tailwindcss";
+@theme{
+  
+    
+    --breakpoint-*: initial;
+    --breakpoint-sm:480px;
+    --breakpoint-md:768px;
+    --breakpoint-lg:1024px;
+    --breakpoint-xl: 1280px;
+    --breakpoint-xxl: 1440px;
+  
+}
+:root{
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+   
+}
+body{
+    height: 100vh
+}
